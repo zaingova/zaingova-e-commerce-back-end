@@ -14,7 +14,7 @@ Screenshot of pplication running in Insomnia
 
 Demo-video of MySQL initialization, database seeding, server initialization, and Insomnia HTTP requests
 
-
+https://github.com/zaingova/zaingova-e-commerce-back-end/assets/127261218/3082724c-eb1f-4c4f-9a9c-39a514c9fab0
 
 ## Usage
 
