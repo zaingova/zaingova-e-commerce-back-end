@@ -18,6 +18,8 @@ https://github.com/zaingova/zaingova-e-commerce-back-end/assets/127261218/308272
 
 ## Usage
 
+[Click here to be redirected to the Github repo](https://github.com/zaingova/zaingova-e-commerce-back-end)
+
 To use this application, first you'll need to run the SQL schema. Then, 'npm i' to install the required dependencies adn seed the database by running 'node seeds/index.js'. Then you can start the server by running 'npm start'. Once all of this is done you can head to Insomnia and test the routes along with the HTTP requests you want to use.
 
 ## License
