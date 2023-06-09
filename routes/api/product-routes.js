@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
     const ProductData = await Product.findAll({
       include: [
         { model: Category },
-        { model: Tag }
+        { model: Tag, through: ProductTag }
       ],
     });
 
@@ -29,7 +29,7 @@ router.get('/:id', async (req, res) => {
     const ProductData = await Product.findByPk(req.params.id, {
       include: [
         { model: Category },
-        { model: Tag }
+        { model: Tag, through: ProductTag }
       ],
     });
 
@@ -138,7 +138,7 @@ router.delete('/:id', async (req, res) => {
 
     res.status(200).json(ProductData);
   } catch (err) {
-    res.status(400).json(err);
+    res.status(500).json(err);
   }
 });
 

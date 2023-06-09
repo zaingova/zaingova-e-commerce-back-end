@@ -8,8 +8,7 @@ router.get('/', async (req, res) => {
   try {
     const TagData = await Tag.findAll({
       include: [
-        { model: Product },
-        { model: ProductTag }
+        { model: Product }
       ],
     });
 
@@ -20,12 +19,11 @@ router.get('/', async (req, res) => {
 });
 
 // find a single tag by its `id`
-router.get('/:id', (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
-    const TagData = await Tag.findByPk(req.params.id {
+    const TagData = await Tag.findByPk(req.params.id, {
       include: [
-        { model: Product },
-        { model: ProductTag }
+        { model: Product }
       ],
     });
 
@@ -44,7 +42,7 @@ router.get('/:id', (req, res) => {
 router.post('/', async (req, res) => {
   try {
     const NewTag = await Tag.create({
-      tag_name = req.body.tag_name,
+      tag_name: req.body.tag_name,
     });
     res.status(200).json(NewTag);
   } catch (err) {
@@ -55,7 +53,7 @@ router.post('/', async (req, res) => {
 // update a tag's name by its `id` value
 router.put('/:id', async (req, res) => {
   try {
-    const UpdatedTag = await Tag.update(req.body {
+    const UpdatedTag = await Tag.update(req.body, {
       where: {
         id: req.params.id,
       },
@@ -66,7 +64,7 @@ router.put('/:id', async (req, res) => {
       return;
     }
 
-    res.status(200).json("Tag added!");
+    res.status(200).json("Tag updated!");
   } catch (err) {
     res.status(500).json(err);
   }
@@ -82,7 +80,7 @@ router.delete('/:id', async (req, res) => {
     });
 
     if (!TagData) {
-      res.status(404).json({ message: "No category found with that ID!" });
+      res.status(404).json({ message: "No tag found with that ID!" });
       return;
     }
 
